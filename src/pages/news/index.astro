@@ -6,6 +6,15 @@ import { Image } from 'astro:assets';
 import SiteBanner from '../../assets/SiteBanner.png';
 import { getCollection } from 'astro:content';
 
+---
+import { getCollection } from 'astro:content';
+const posts = await getCollection('news');
+---
+<p style="padding:12px;border:1px solid #ccc">
+  DEBUG posts: {posts.length}
+</p>
+
+
 const posts = await getCollection('news');
 const sortedPosts = [...posts].sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
