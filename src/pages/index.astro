@@ -116,7 +116,45 @@ const SITE_DESCRIPTION = 'NFL and College Football news, analysis, betting – A
 
 	.latest {
 		text-align: center;
+  		padding: 3rem 1.5rem;
 	}
+
+	.intro-text {
+	  font-size: 1.2rem;
+	  max-width: 700px;
+	  margin: 0 auto 2rem;
+	  color: var(--text-secondary);
+	}
+
+	.cta-button, .read-more {
+	  display: inline-block;
+	  margin-top: 1rem;
+	  padding: 0.8rem 1.8rem;
+	  background: var(--theme-accent, #00ff9d);
+	  color: black;
+	  font-weight: 600;
+	  text-decoration: none;
+	  border-radius: 0.5rem;
+	  transition: opacity 0.2s;
+	}
+
+.cta-button:hover, .read-more:hover {
+  opacity: 0.9;
+}
+
+.featured-post h3 {
+  font-size: 1.8rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.featured-post h3 a {
+  color: var(--theme-text);
+  text-decoration: none;
+}
+
+.featured-post h3 a:hover {
+  text-decoration: underline;
+}
 
 	.placeholder {
 		font-size: 1.2rem;
