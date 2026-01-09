@@ -1,21 +1,81 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
-import { render } from 'astro:content';
+// src/pages/news/[...slug].astro
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { Image } from 'astro:assets';
+import SiteBanner from '../../assets/SiteBanner.png';
+import { getCollection, getEntry } from 'astro:content';
 
-export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+const { slug } = Astro.params;
+const post = await getEntry('blog', slug);
+
+if (!post) {
+  return Astro.redirect('/404');
 }
-type Props = CollectionEntry<'blog'>;
 
-const post = Astro.props;
-const { Content } = await render(post);
+const { Content } = await post.render();
+
+const SITE_TITLE = `${post.data.title} - Football Techs`;
+const SITE_DESCRIPTION = post.data.description || 'NFL and College Football analysis from Football Techs';
 ---
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<!-- Hero Banner with Nav Overlay -->
+		<div class="hero-banner">
+			<Image src={SiteBanner} alt="Football Techs Post" width={1920} height={600} format="webp" loading="eager" />
+			<div class="nav-overlay">
+				<Header />
+			</div>
+		</div>
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost>
+		<main class="post-content">
+			<article class="post-article">
+				<header class="post-header">
+					<h1>{post.data.title}</h1>
+					<time datetime={post.data.pubDate}>
+						{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+					</time>
+					{post.data.description && <p class="post-description">{post.data.description}</p>}
+				</header>
+
+				<div class="post-body">
+					<Content />
+				</div>
+
+				<footer class="post-footer">
+					<a href="/news" class="back-link">← Back to News</a>
+				</footer>
+			</article>
+		</main>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.hero-banner { position: relative; width: 100%; overflow: hidden; }
+	.hero-banner :global(img) { width: 100%; height: auto; display: block; }
+	.nav-overlay { position: absolute; top: 0; left: 0; width: 100%; z-index: 10; }
+
+	.post-content { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+	.post-article { line-height: 1.8; }
+
+	.post-header { text-align: center; margin-bottom: 3rem; }
+	.post-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+	.post-header time { font-size: 1rem; color: var(--text-secondary); display: block; margin-bottom: 1rem; }
+	.post-description { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; }
+
+	.post-body { font-size: 1.1rem; }
+	.post-body :global(h2) { font-size: 1.8rem; margin-top: 2.5rem; }
+	.post-body :global(p) { margin-bottom: 1.5rem; }
+
+	.post-footer { text-align: center; margin-top: 4rem; }
+	.back-link { font-weight: 600; color: var(--theme-accent, #00ff9d); text-decoration: none; }
+	.back-link:hover { text-decoration: underline; }
+</style>
