@@ -1,5 +1,5 @@
 ---
-// src/pages/blog/index.astro
+// src/pages/news/index.astro
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
@@ -19,7 +19,6 @@ const SITE_DESCRIPTION = 'Latest NFL and College Football news, analysis, and AI
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<!-- Hero Banner with Nav Overlay (same as home/about) -->
 		<div class="hero-banner">
 			<Image src={SiteBanner} alt="Football Techs News" width={1920} height={600} format="webp" loading="eager" />
 			<div class="nav-overlay">
@@ -38,10 +37,10 @@ const SITE_DESCRIPTION = 'Latest NFL and College Football news, analysis, and AI
 					<ul class="post-list">
 						{sortedPosts.map((post) => (
 							<li class="post-item">
-								<a href={`/blog/${post.slug}/`}>
+								<a href={`/news/${post.slug}/`}>
 									<h2>{post.data.title}</h2>
-									<time>{post.data.pubDate.toLocaleDateString()}</time>
-									<p>{post.data.description}</p>
+									<time datetime={post.data.pubDate}>{post.data.pubDate.toLocaleDateString()}</time>
+									<p>{post.data.description || 'No description'}</p>
 								</a>
 							</li>
 						))}
@@ -55,30 +54,20 @@ const SITE_DESCRIPTION = 'Latest NFL and College Football news, analysis, and AI
 </html>
 
 <style>
-	/* Reuse hero styles from homepage */
 	.hero-banner { position: relative; width: 100%; overflow: hidden; }
 	.hero-banner :global(img) { width: 100%; height: auto; display: block; }
 	.nav-overlay { position: absolute; top: 0; left: 0; width: 100%; z-index: 10; }
 
-	.page-content { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
-
-	.news-section { text-align: center; }
+	.page-content { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; text-align: center; }
 
 	h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-
 	.intro { font-size: 1.2rem; margin-bottom: 3rem; color: var(--text-secondary); }
-
 	.no-posts { font-size: 1.2rem; font-style: italic; color: var(--text-secondary); }
 
 	.post-list { list-style: none; padding: 0; max-width: 800px; margin: 0 auto; text-align: left; }
-
-	.post-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gray-light); }
-
+	.post-item { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #333; }
 	.post-item a { text-decoration: none; color: inherit; }
-
-	.post-item h2 { margin: 0 0 0.5rem; font-size: 1.6rem; }
-
-	.post-item time { display: block; margin-bottom: 0.75rem; color: var(--text-secondary); font-size: 0.95rem; }
-
-	.post-item p { margin: 0; line-height: 1.6; }
+	.post-item h2 { margin: 0 0 0.5rem; font-size: 1.8rem; }
+	.post-item time { display: block; margin-bottom: 0.75rem; color: var(--text-secondary); }
+	.post-item p { margin: 0; line-height: 1.6; color: var(--text-secondary); }
 </style>
