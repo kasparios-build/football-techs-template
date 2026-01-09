@@ -1,10 +1,14 @@
 ---
+// src/pages/index.astro
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
----
+import { Image } from 'astro:assets';
+import SiteBanner from '../assets/SiteBanner.png';
 
+const SITE_TITLE = 'Football Techs';
+const SITE_DESCRIPTION = 'NFL and College Football news, analysis, betting – AI-powered picks and data-driven insights';
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -12,39 +16,90 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
+
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<!-- Hero Banner -->
+			<div class="banner-wrapper">
+				<Image
+					src={SiteBanner}
+					alt="Football Techs - NFL & College Football News, Analysis, Betting"
+					width={1920}
+					height={600}
+					format="webp"
+					loading="eager"
+				/>
+			</div>
+
+			<!-- Intro Section -->
+			<section class="intro">
+				<h1>Football Techs</h1>
+				<p class="tagline">
+					We provide NFL and College Football news, analysis, betting
+				</p>
+				<p class="description">
+					Data-driven insights • AI-powered picks • Player props • Game previews • Sharp betting edges<br />
+					Home of <a href="https://x.com/FootballTechs" target="_blank" rel="noopener">@FootballTechs</a> on X
+				</p>
+			</section>
+
+			<!-- Placeholder for future blog posts / picks -->
+			<section class="latest">
+				<h2>Latest Picks & Analysis</h2>
+				<p class="placeholder">
+					Wild Card weekend AI breakdowns dropping soon — stay tuned!
+				</p>
+			</section>
 		</main>
+
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.banner-wrapper {
+		width: 100%;
+		margin-bottom: 3rem;
+		overflow: hidden;
+	}
+
+	.banner-wrapper :global(img) {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.intro {
+		text-align: center;
+		max-width: 900px;
+		margin: 0 auto 5rem auto;
+		padding: 0 1.5rem;
+	}
+
+	.tagline {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--theme-accent, #00ff9d);
+		margin: 1.5rem 0 1rem;
+		line-height: 1.4;
+	}
+
+	.description {
+		font-size: 1.1rem;
+		color: var(--text-secondary);
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	.latest {
+		text-align: center;
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.placeholder {
+		font-size: 1.2rem;
+		color: var(--text-secondary);
+		font-style: italic;
+	}
+</style>
