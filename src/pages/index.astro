@@ -15,45 +15,30 @@ const SITE_DESCRIPTION = 'NFL and College Football news, analysis, betting – A
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<!-- Full-width Hero Banner ABOVE Navigation -->
 		<div class="hero-banner">
-			<Image
-				src={SiteBanner}
-				alt="Football Techs - NFL & College Football News, Analysis, Betting"
-				width={1920}
-				height={600}
-				format="webp"
-				loading="eager"
-			/>
-			<!-- Navigation Overlay on Top of Banner -->
+			<Image src={SiteBanner} alt="Football Techs Banner" width={1920} height={600} format="webp" loading="eager" />
 			<div class="nav-overlay">
 				<Header />
 			</div>
 		</div>
 
 		<main class="main-content">
-			<!-- Intro Section -->
 			<section class="intro">
 				<h1>Football Techs</h1>
-				<p class="tagline">
-					We provide NFL and College Football news, analysis, betting
-				</p>
+				<p class="tagline">We provide NFL and College Football news, analysis, betting</p>
 				<p class="description">
 					Data-driven insights • AI-powered picks • Player props • Game previews • Sharp betting edges<br />
 					Home of <a href="https://x.com/FootballTechs" target="_blank" rel="noopener">@FootballTechs</a> on X
 				</p>
 			</section>
 
-			<!-- Latest Picks Placeholder -->
 			<section class="latest">
-  <h2>Latest Picks & Analysis</h2>
-  <p class="intro-text">
-    Fresh AI-powered NFL picks, player props, and data-driven breakdowns every week.
-  </p>
-  <p class="cta">
-    <a href="/news" class="cta-button">View All News & Picks →</a>
-  </p>
-</section>
+				<h2>Latest Picks & Analysis</h2>
+				<p class="intro-text">Fresh AI-powered NFL picks and breakdowns every week.</p>
+				<p class="cta">
+					<a href="/news" class="cta-button">View All News & Picks →</a>
+				</p>
+			</section>
 		</main>
 
 		<Footer />
@@ -61,104 +46,18 @@ const SITE_DESCRIPTION = 'NFL and College Football news, analysis, betting – A
 </html>
 
 <style>
-	/* Hero Banner - Full Width, Above Everything */
-	.hero-banner {
-		position: relative;
-		width: 100%;
-		overflow: hidden;
-	}
+	.hero-banner { position: relative; width: 100%; overflow: hidden; }
+	.hero-banner :global(img) { width: 100%; height: auto; display: block; }
+	.nav-overlay { position: absolute; top: 0; left: 0; width: 100%; z-index: 10; }
 
-	.hero-banner :global(img) {
-		width: 100%;
-		height: auto;
-		display: block;
-	}
+	.main-content { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; text-align: center; }
 
-	/* Navigation Overlay - Places Header on Top of Banner */
-	.nav-overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 10; /* Ensures nav is above banner image */
-		background: rgba(0, 0, 0, 0.3); /* Optional: subtle dark overlay for readability */
-		backdrop-filter: blur(2px); /* Optional: slight blur behind nav */
-	}
+	.intro { margin-bottom: 5rem; }
+	.tagline { font-size: 1.5rem; font-weight: 700; margin: 1.5rem 0; }
+	.description { font-size: 1.1rem; max-width: 700px; margin: 0 auto; color: var(--text-secondary); }
 
-	/* Main Content - Starts Below the Banner */
-	.main-content {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 2rem 1.5rem;
-		position: relative;
-		background: var(--theme-bg, #ffffff); /* Matches your theme */
-	}
-
-	.intro {
-		text-align: center;
-		margin-bottom: 5rem;
-	}
-
-	.tagline {
-		font-size: 1.5rem;
-		font-weight: 700;
-		color: var(--theme-accent, #00ff9d);
-		margin: 1.5rem 0 1rem;
-		line-height: 1.4;
-	}
-
-	.description {
-		font-size: 1.1rem;
-		color: var(--text-secondary);
-		max-width: 700px;
-		margin: 0 auto;
-	}
-
-	.latest {
-		text-align: center;
-  		padding: 3rem 1.5rem;
-	}
-
-	.intro-text {
-	  font-size: 1.2rem;
-	  max-width: 700px;
-	  margin: 0 auto 2rem;
-	  color: var(--text-secondary);
-	}
-
-	.cta-button, .read-more {
-	  display: inline-block;
-	  margin-top: 1rem;
-	  padding: 0.8rem 1.8rem;
-	  background: var(--theme-accent, #00ff9d);
-	  color: black;
-	  font-weight: 600;
-	  text-decoration: none;
-	  border-radius: 0.5rem;
-	  transition: opacity 0.2s;
-	}
-
-.cta-button:hover, .read-more:hover {
-  opacity: 0.9;
-}
-
-.featured-post h3 {
-  font-size: 1.8rem;
-  margin: 1.5rem 0 1rem;
-}
-
-.featured-post h3 a {
-  color: var(--theme-text);
-  text-decoration: none;
-}
-
-.featured-post h3 a:hover {
-  text-decoration: underline;
-}
-
-	.placeholder {
-		font-size: 1.2rem;
-		color: var(--text-secondary);
-		font-style: italic;
-	}
+	.latest { margin-top: 3rem; }
+	.intro-text { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; color: var(--text-secondary); }
+	.cta-button { display: inline-block; padding: 0.8rem 1.8rem; background: #00ff9d; color: black; font-weight: 600; text-decoration: none; border-radius: 0.5rem; }
+	.cta-button:hover { opacity: 0.9; }
 </style>
