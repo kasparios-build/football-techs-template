@@ -1,6 +1,6 @@
 ---
-title: 'Wild Card Weekend AI Picks'
-description: 'Automated value bets and analysis for NFL Playoffs'
+title: Wild Card Weekend AI Picks
+description: Automated value bets for NFL Playoffs Wild Card round
 pubDate: 2026-01-09
 ---
 
