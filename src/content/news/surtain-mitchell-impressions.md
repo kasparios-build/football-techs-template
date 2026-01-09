@@ -1,23 +1,31 @@
 ---
-title: Pat Surtain II Impressed by Jets' Trade Acquisition Adonai Mitchell
+title: All-Pro corner sees New York Jets WR as potential steal
 description: Broncos star corner Pat Surtain II shares high praise for Adonai Mitchell's raw talent after the receiver's move from Indianapolis to New York.
 pubDate: 2026-01-09
 ---
 
 # Pat Surtain II's Take on the Jets' Hidden Gem
 
-In early November 2025, the NFL world was stunned when the New York Jets pulled off a blockbuster trade, sending star cornerback Sauce Gardner to the Indianapolis Colts. In return, the Jets received wide receiver **Adonai Mitchell** along with Indianapolis' first-round picks in 2026 and 2027. The deal was a bold move for a Jets team looking to rebuild their offense around young talent, giving up one of the league's top defenders for future draft capital and a receiver many believed had untapped potential.
+Pat Surtain II doesn’t hand out praise lightly. As one of the NFL’s premier shutdown corners, Surtain has built his reputation on film study, discipline, and a clear-eyed understanding of what separates ordinary receivers from special ones. That’s why his recent comments about Adonai Mitchell stand out.
 
-Adonai Mitchell, the Colts' second-round pick in 2024, had been a disappointment in Indianapolis. Limited snaps and inconsistent production marked his young career — just 32 receptions for 464 yards and no touchdowns over parts of two seasons, including a frustrating fumble on a potential long touchdown in 2025 that cost his team dearly. The Colts, prioritizing a shutdown corner like Gardner to bolster their defense, included Mitchell in the package almost as an afterthought.
+“I seen him on film and it’s like… this guy is making plays,” Surtain said of Mitchell during his recent Closed Sunday podcast.
 
-Fast forward to Wild Card weekend in January 2026. The Jets, now with Mitchell getting more opportunities in a revamped offense, were preparing for their playoff matchup. Across the league, Denver Broncos cornerback Pat Surtain II — one of the best in the game — was watching film in preparation for his own postseason run. Surtain, known for his film study and respect for underrated talent, had faced the Colts earlier in the season and remembered one name standing out: Adonai Mitchell.
+His initial thought of the then-Colts WR: “I think this guy’s their best receiver—like, raw talent.”
 
-"We played the Colts this year," Surtain recalled in a post-practice interview. "Adonai Mitchell. He's a young cat. I seen him on film and it's like... this guy is making plays."
+It’s a striking endorsement, especially considering Mitchell’s reputation to this point. Drafted by the Colts with high expectations, Mitchell’s early career in Indianapolis never fully took off. Inconsistent usage, a limited snap count, and a crowded receiver room kept him from finding a rhythm, leading many around the league to label him a disappointment before he had a real chance to prove himself.
 
-Surtain paused, shaking his head with a knowing smile. "I think this guy's their best receiver — like, raw talent."
+Surtain, however, sees potential for something different on tape – and in the limited number of snaps where he faced Mitchell this Fall.
 
-He explained that Mitchell's limited film from Indianapolis made him even more intriguing. "His snaps were low, so you don't see a ton, but when he gets the ball... quick releases, natural giddy-up. That speed off the line, the way he accelerates — it's special."
+“We played the Colts this year. Adonai Mitchell. He’s a young cat,” Surtain added, speaking from direct experience. 
 
-Surtain, who has locked down some of the league's top receivers, knows better than most how less-heralded guys can surprise you. "Less-heralded receivers often bring their best against top corners," he noted. "They've got that chip on their shoulder. You can't sleep on anybody in this league."
+He’s got quick releases,” Surtain said. And that natural "giddy-up.”
 
-For the Jets, Mitchell's fresh start in New York has already shown flashes of that raw talent Surtain spotted. While the trade compensation — two future firsts and a proven corner — raised eyebrows, Surtain's words serve as a reminder: sometimes the real value in a deal is the player no one was talking about. If Mitchell lives up to the hype Surtain saw on film, the Jets might have stolen more than just draft picks.
+Those are the details elite corners notice immediately: the way a receiver gets off the line, how effortlessly he accelerates, and whether his movement stresses coverage even when the ball doesn’t come his way.
+
+It’s a telling observation. Receivers fighting for recognition often elevate their game when matched up with elite defenders, and Mitchell appears to have done just that. Now, with a fresh opportunity in New York, Mitchell may finally get the consistent role that eluded him early in his career.
+
+For Surtain, the takeaway is simple: talent doesn’t always show up in stat lines. Sometimes, it lives on film—waiting for the right opportunity.
+
+Mitchell's numbers were on a steady climb in the second half of the Jets' season until the offense stalled out behind Rookie QB Brady Cook.
+
+But he flashed with 300 yards and two touchdowns in a seven game span. If Mitchell lives up to the hype Surtain saw on film, the Jets might have stolen more than just draft picks.
