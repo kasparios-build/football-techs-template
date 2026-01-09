@@ -10,5 +10,5 @@ const newsCollection = defineCollection({
 });
 
 export const collections = {
-  news: newsCollection,
+  news: newsCollection,  // Change from 'blog' to 'news'
 };
