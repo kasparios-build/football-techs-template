@@ -1,111 +1,124 @@
 ---
+// src/pages/blog/index.astro
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { Image } from 'astro:assets';
+import SiteBanner from '../../assets/SiteBanner.png';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const SITE_TITLE = 'News - Football Techs';
+const SITE_DESCRIPTION = 'Latest NFL and College Football news, analysis, and AI-powered betting picks from Football Techs';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
 	</head>
 	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
+		<!-- Hero Banner with Nav Overlay -->
+		<div class="hero-banner">
+			<Image src={SiteBanner} alt="Football Techs News" width={1920} height={600} format="webp" loading="eager" />
+			<div class="nav-overlay">
+				<Header />
+			</div>
+		</div>
+
+		<main class="news-content">
+			<section class="news-list">
+				<h1>Latest News & Analysis</h1>
+				<p class="intro">Fresh NFL and College Football insights, AI picks, and betting edges.</p>
+
+				{posts.length === 0 ? (
+					<p>No articles yet — Wild Card coverage dropping soon!</p>
+				) : (
+					<ul class="post-grid">
+						{sortedPosts.map((post) => (
+							<li class="post-card">
+								<a href={`/blog/${post.slug}/`}>
+									<h2>{post.data.title}</h2>
+									<p class="date">{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+									<p>{post.data.description}</p>
 								</a>
 							</li>
-						))
-					}
-				</ul>
+						))}
+					</ul>
+				)}
 			</section>
 		</main>
+
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.hero-banner, .nav-overlay { /* Reuse from homepage */ 
+		position: relative; width: 100%; overflow: hidden; 
+	}
+	.hero-banner :global(img) { width: 100%; height: auto; display: block; }
+	.nav-overlay { position: absolute; top: 0; left: 0; width: 100%; z-index: 10; }
+
+	.news-content {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 3rem 1.5rem;
+	}
+
+	h1 {
+		text-align: center;
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.intro {
+		text-align: center;
+		font-size: 1.2rem;
+		margin-bottom: 3rem;
+		color: var(--text-secondary);
+	}
+
+	.post-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		list-style: none;
+		padding: 0;
+	}
+
+	.post-card {
+		background: var(--card-bg, #f9f9f9);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		transition: transform 0.2s ease;
+	}
+
+	.post-card:hover {
+		transform: translateY(-4px);
+	}
+
+	.post-card a {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+	}
+
+	.post-card h2 {
+		margin: 0 0 0.5rem;
+		font-size: 1.4rem;
+	}
+
+	.date {
+		font-size: 0.9rem;
+		color: var(--text-secondary);
+		margin-bottom: 0.75rem;
+	}
+
+	.post-card p {
+		margin: 0;
+		line-height: 1.6;
+	}
+</style>
