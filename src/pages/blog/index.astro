@@ -11,16 +11,15 @@ const posts = await getCollection('blog');
 const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const SITE_TITLE = 'News - Football Techs';
-const SITE_DESCRIPTION = 'Latest NFL and College Football news, analysis, and AI-powered betting picks from Football Techs';
+const SITE_DESCRIPTION = 'Latest NFL and College Football news, analysis, and AI-powered betting picks';
 ---
-
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<!-- Hero Banner with Nav Overlay -->
+		<!-- Hero Banner with Nav Overlay (same as home/about) -->
 		<div class="hero-banner">
 			<Image src={SiteBanner} alt="Football Techs News" width={1920} height={600} format="webp" loading="eager" />
 			<div class="nav-overlay">
@@ -28,20 +27,20 @@ const SITE_DESCRIPTION = 'Latest NFL and College Football news, analysis, and AI
 			</div>
 		</div>
 
-		<main class="news-content">
-			<section class="news-list">
-				<h1>Latest News & Analysis</h1>
-				<p class="intro">Fresh NFL and College Football insights, AI picks, and betting edges.</p>
+		<main class="page-content">
+			<section class="news-section">
+				<h1>News & Analysis</h1>
+				<p class="intro">Latest NFL and College Football insights, AI picks, and betting edges from Football Techs.</p>
 
 				{posts.length === 0 ? (
-					<p>No articles yet — Wild Card coverage dropping soon!</p>
+					<p class="no-posts">No articles yet — Wild Card coverage coming soon!</p>
 				) : (
-					<ul class="post-grid">
+					<ul class="post-list">
 						{sortedPosts.map((post) => (
-							<li class="post-card">
+							<li class="post-item">
 								<a href={`/blog/${post.slug}/`}>
 									<h2>{post.data.title}</h2>
-									<p class="date">{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+									<time>{post.data.pubDate.toLocaleDateString()}</time>
 									<p>{post.data.description}</p>
 								</a>
 							</li>
@@ -56,69 +55,30 @@ const SITE_DESCRIPTION = 'Latest NFL and College Football news, analysis, and AI
 </html>
 
 <style>
-	.hero-banner, .nav-overlay { /* Reuse from homepage */ 
-		position: relative; width: 100%; overflow: hidden; 
-	}
+	/* Reuse hero styles from homepage */
+	.hero-banner { position: relative; width: 100%; overflow: hidden; }
 	.hero-banner :global(img) { width: 100%; height: auto; display: block; }
 	.nav-overlay { position: absolute; top: 0; left: 0; width: 100%; z-index: 10; }
 
-	.news-content {
-		max-width: 1100px;
-		margin: 0 auto;
-		padding: 3rem 1.5rem;
-	}
+	.page-content { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
 
-	h1 {
-		text-align: center;
-		font-size: 2.5rem;
-		margin-bottom: 1rem;
-	}
+	.news-section { text-align: center; }
 
-	.intro {
-		text-align: center;
-		font-size: 1.2rem;
-		margin-bottom: 3rem;
-		color: var(--text-secondary);
-	}
+	h1 { font-size: 2.5rem; margin-bottom: 1rem; }
 
-	.post-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-		gap: 2rem;
-		list-style: none;
-		padding: 0;
-	}
+	.intro { font-size: 1.2rem; margin-bottom: 3rem; color: var(--text-secondary); }
 
-	.post-card {
-		background: var(--card-bg, #f9f9f9);
-		border-radius: 0.75rem;
-		padding: 1.5rem;
-		transition: transform 0.2s ease;
-	}
+	.no-posts { font-size: 1.2rem; font-style: italic; color: var(--text-secondary); }
 
-	.post-card:hover {
-		transform: translateY(-4px);
-	}
+	.post-list { list-style: none; padding: 0; max-width: 800px; margin: 0 auto; text-align: left; }
 
-	.post-card a {
-		text-decoration: none;
-		color: inherit;
-		display: block;
-	}
+	.post-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gray-light); }
 
-	.post-card h2 {
-		margin: 0 0 0.5rem;
-		font-size: 1.4rem;
-	}
+	.post-item a { text-decoration: none; color: inherit; }
 
-	.date {
-		font-size: 0.9rem;
-		color: var(--text-secondary);
-		margin-bottom: 0.75rem;
-	}
+	.post-item h2 { margin: 0 0 0.5rem; font-size: 1.6rem; }
 
-	.post-card p {
-		margin: 0;
-		line-height: 1.6;
-	}
+	.post-item time { display: block; margin-bottom: 0.75rem; color: var(--text-secondary); font-size: 0.95rem; }
+
+	.post-item p { margin: 0; line-height: 1.6; }
 </style>
