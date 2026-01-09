@@ -28,8 +28,9 @@
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: transparent; /* Transparent so it overlays nicely on banner */
-		box-shadow: none; /* Remove shadow for cleaner hero look */
+		background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay for readability on any banner */
+		backdrop-filter: blur(8px); /* Slight blur for premium glass effect */
+		box-shadow: none;
 	}
 
 	h2 {
@@ -40,7 +41,7 @@
 
 	h2 a {
 		text-decoration: none;
-		color: var(--theme-text, #ffffff);
+		color: #ffffff;
 	}
 
 	nav {
@@ -59,7 +60,7 @@
 
 	.nav-link {
 		padding: 0.5rem 0;
-		color: var(--theme-text, #ffffff);
+		color: #ffffff;
 		font-weight: 500;
 		font-size: 1.1rem;
 		text-decoration: none;
@@ -70,7 +71,7 @@
 	.nav-link:hover,
 	.nav-link.active {
 		opacity: 0.8;
-		border-bottom-color: var(--accent, #00ff9d);
+		border-bottom-color: #00ff9d;
 	}
 
 	.social-links {
@@ -80,7 +81,8 @@
 
 	.social-links a {
 		display: flex;
-		color: var(--theme-text, #ffffff);
+		color: #ffffff;
+		text-decoration: none;
 		transition: opacity 0.2s ease;
 	}
 
@@ -100,7 +102,7 @@
 		border-width: 0;
 	}
 
-	/* Mobile adjustments */
+	/* Mobile */
 	@media (max-width: 720px) {
 		h2 {
 			font-size: 1.5rem;
