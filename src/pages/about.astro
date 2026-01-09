@@ -15,11 +15,11 @@ const SITE_DESCRIPTION = 'Learn more about Football Techs – NFL and College Fo
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<!-- Hero Banner with Nav Overlay -->
+		<!-- Hero Banner with Nav Overlay (consistent across site) -->
 		<div class="hero-banner">
 			<Image
 				src={SiteBanner}
-				alt="Football Techs - About Us"
+				alt="Football Techs - About"
 				width={1920}
 				height={600}
 				format="webp"
@@ -35,33 +35,33 @@ const SITE_DESCRIPTION = 'Learn more about Football Techs – NFL and College Fo
 				<h1>About Football Techs</h1>
 				
 				<p class="intro">
-					Welcome to <strong>Football Techs</strong> – your home for data-driven NFL and College Football coverage.
+					Welcome to <strong>Football Techs</strong> – your trusted source for data-driven NFL and College Football coverage.
 				</p>
 
 				<p>
-					We combine deep analytics, AI-powered modeling, and real-time insights to deliver sharp news, game previews, player prop analysis, and betting edges you won't find anywhere else.
+					We deliver sharp news, in-depth analysis, AI-powered betting picks, player props, and game previews you won’t find anywhere else. Everything is backed by analytics, modeling, and transparent performance tracking.
 				</p>
 
 				<p>
-					Founded and run by the team behind <a href="https://x.com/FootballTechs" target="_blank" rel="noopener">@FootballTechs</a> on X (2.4k+ followers and growing), this site is the official hub for all our picks, breakdowns, and exclusive content.
+					This site is the official home of <a href="https://x.com/FootballTechs" target="_blank" rel="noopener">@FootballTechs</a> on X (2.4k+ followers and growing fast). All the picks, breakdowns, and insights you see on X now live here in full detail.
 				</p>
 
-				<h2>What We Cover</h2>
+				<h2>What We Offer</h2>
 				<ul class="features">
-					<li>AI-generated betting picks & player props</li>
-					<li>In-depth game previews and statistical analysis</li>
-					<li>Breaking NFL & College Football news with a tech/analytics spin</li>
-					<li>Wild Card, Divisional, Conference Championship, and Super Bowl coverage</li>
-					<li>Transparent tracking of pick performance and ROI</li>
+					<li>AI-generated picks & player props with confidence levels</li>
+					<li>Detailed game previews and statistical deep dives</li>
+					<li>Breaking NFL & College Football news with a tech/analytics angle</li>
+					<li>Full playoff coverage – Wild Card through Super Bowl</li>
+					<li>Transparent ROI tracking and long-term performance stats</li>
 				</ul>
 
 				<h2>Our Mission</h2>
 				<p>
-					To give football fans and bettors the sharpest, most actionable insights available – turning data into an edge, one pick at a time.
+					To arm football fans and bettors with the sharpest, most actionable insights available – turning raw data into real edges, one pick at a time.
 				</p>
 
 				<p class="closing">
-					Thanks for visiting. Follow us on X for daily picks and join the conversation!<br />
+					Thanks for stopping by. Follow us on X for daily updates and join the conversation!<br />
 					<a href="https://x.com/FootballTechs" target="_blank" rel="noopener" class="x-link">@FootballTechs</a>
 				</p>
 			</section>
@@ -95,50 +95,55 @@ const SITE_DESCRIPTION = 'Learn more about Football Techs – NFL and College Fo
 	.about-content {
 		max-width: 900px;
 		margin: 0 auto;
-		padding: 3rem 1.5rem;
+		padding: 4rem 1.5rem;
 	}
 
 	.about-section {
-		line-height: 1.7;
-		color: var(--text-primary);
+		line-height: 1.8;
+		font-size: 1.1rem;
 	}
 
 	h1 {
 		text-align: center;
-		font-size: 2.5rem;
+		font-size: 2.8rem;
 		margin-bottom: 2rem;
 	}
 
 	.intro {
-		font-size: 1.3rem;
+		font-size: 1.35rem;
 		text-align: center;
-		margin-bottom: 2rem;
+		margin: 0 auto 2.5rem;
+		max-width: 800px;
 		font-weight: 500;
 	}
 
 	.features {
 		font-size: 1.15rem;
-		margin: 2rem 0;
-		padding-left: 1.5rem;
+		margin: 3rem 0;
+		padding-left: 2rem;
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.features li {
-		margin-bottom: 0.75rem;
+		margin-bottom: 1rem;
 	}
 
 	h2 {
-		margin-top: 3rem;
-		font-size: 1.8rem;
+		text-align: center;
+		font-size: 2rem;
+		margin: 3.5rem 0 1.5rem;
 	}
 
 	.closing {
 		text-align: center;
-		font-size: 1.15rem;
-		margin-top: 3rem;
+		font-size: 1.2rem;
+		margin-top: 4rem;
 	}
 
 	.x-link {
-		font-weight: 600;
+		font-weight: 700;
 		color: var(--theme-accent, #00ff9d);
 		text-decoration: none;
 	}
