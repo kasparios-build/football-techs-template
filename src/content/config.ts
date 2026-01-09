@@ -5,10 +5,10 @@ const newsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
-    pubDate: z.date().optional(),
+    pubDate: z.date(),
   }),
 });
 
 export const collections = {
-  news: newsCollection,  // Change from 'blog' to 'news'
+  news: newsCollection,
 };
