@@ -1,14 +1,13 @@
-import { z, defineCollection } from 'astro:content';
+// src/content/config.ts
+import { defineCollection, z } from 'astro:content';
 
-const newsCollection = defineCollection({
-  type: 'content',
+const news = defineCollection({
+  type: 'content', // ✅ must be content for .md/.mdx
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
-    pubDate: z.date().optional(),
+    pubDate: z.coerce.date(),
   }),
 });
 
-export const collections = {
-  'news': newsCollection,  // Must be 'news' to match the folder
-};;
+export const collections = { news };
