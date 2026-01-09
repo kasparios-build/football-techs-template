@@ -4,7 +4,7 @@ description: Automated value bets and analysis for NFL Playoffs
 pubDate: 2026-01-09
 ---
 
-# Automated NFL Picks - Week of January 09, 2026
+# Automated NFL Picks - Week of January 09, 2026 
 
 AI-generated value bets from live odds. Transparent reasoning below.
 
