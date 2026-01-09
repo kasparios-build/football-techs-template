@@ -37,10 +37,10 @@ const SITE_DESCRIPTION = 'Latest NFL and College Football news, analysis, and AI
 					<ul class="post-list">
 						{sortedPosts.map((post) => (
 							<li class="post-item">
-								<a href={`/news/${post.slug}/`}>
-									<h2>{post.data.title}</h2>
-									<time datetime={post.data.pubDate}>{post.data.pubDate.toLocaleDateString()}</time>
-									<p>{post.data.description || 'No description'}</p>
+								<a href={`/news/${post.slug ?? post.id}/`}>
+								  <h2>{post.data.title}</h2>
+								  <time>{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+								  <p>{post.data.description || ''}</p>
 								</a>
 							</li>
 						))}
