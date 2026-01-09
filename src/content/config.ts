@@ -10,4 +10,5 @@ const news = defineCollection({
   }),
 });
 
+
 export const collections = { news };
